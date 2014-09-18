@@ -1,0 +1,30 @@
+{
+  "name": "giffer-limit",
+  "version": "1.0.0",
+  "description": "Limit downloaded GIFs to a specific number of images",
+  "main": "index.js",
+  "scripts": {
+    "test": "tap tests/test-*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MaxGfeller/giffer-limit.git"
+  },
+  "keywords": [
+    "giffer",
+    "limit",
+    "gifs",
+    "download"
+  ],
+  "author": "Max Gfeller <max.gfeller@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MaxGfeller/giffer-limit/issues"
+  },
+  "homepage": "https://github.com/MaxGfeller/giffer-limit",
+  "devDependencies": {
+    "giffer": "^2.0.1",
+    "levelup": "^0.19.0",
+    "memdown": "^0.10.2"
+  }
+}
