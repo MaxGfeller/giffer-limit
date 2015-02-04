@@ -3,6 +3,7 @@ var levelup = require('levelup')
 var Giffer = require('giffer')
 var TestAdapter = require('./testadapter')
 var spawn = require('child_process').spawn
+var fs = require('fs')
 
 // start testserver
 var ls = spawn('node', ['server/server.js'], {
@@ -22,13 +23,13 @@ test('Test functionality of giffer-limit', function(t) {
   var i = 0
   giffer.on('gif', function() {
     i++
-
     if (i < 6) return
 
-    console.log(giffer.seqDb)
+    var files = fs.readdirSync(giffer.outDir)
+    t.equals(files.length, 5, 'one gif should have been deleted')
+    t.end()
+    ls.kill()
   })
-  t.end()
-  ls.kill()
 })
 
 // test('Maximum number reached at start', function(t) {
