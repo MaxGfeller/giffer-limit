@@ -9,7 +9,8 @@ function prepare(giffer, limit) {
     reverse: true,
     gt: 1
   }).pipe(through(function(k, v) {
-    if (n++ > limit) toDelete.push(v)
+    n++
+    if (n > limit) toDelete.push(v)
   }))
 
   toDelete.forEach(function(k) {
@@ -21,7 +22,8 @@ function noop() {}
 module.exports = function(giffer, opts) {
   // prepare(giffer, opts.limit)
   giffer.pre('download', function(next) {
-    if (n++ <= opts.limit) return next()
+    n++
+    if (n <= opts.limit) return next()
 
     giffer.seqDb.createReadStream({
       limit: 1,
