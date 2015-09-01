@@ -3,9 +3,9 @@ var EventEmitter = require('events').EventEmitter
 
 inherits(TestAdapter, EventEmitter)
 
-function TestAdapter() {}
+function TestAdapter () {}
 
-TestAdapter.prototype.start = function() {
+TestAdapter.prototype.start = function () {
     setTimeout(this.emit.bind(this, 'gif', 'http://localhost:9876/1.gif', { origin: 'test' }), 2000)
     setTimeout(this.emit.bind(this, 'gif', 'http://localhost:9876/2.gif', { origin: 'test2' }), 2100)
     setTimeout(this.emit.bind(this, 'gif', 'http://localhost:9876/3.gif', { origin: 'test3' }), 2300)
@@ -14,6 +14,6 @@ TestAdapter.prototype.start = function() {
     setTimeout(this.emit.bind(this, 'gif', 'http://localhost:9876/6.gif', { origin: 'test6' }), 2900)
 }
 
-TestAdapter.prototype.stop = function() {}
+TestAdapter.prototype.stop = function () {}
 
 module.exports = TestAdapter
