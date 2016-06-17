@@ -1,6 +1,6 @@
 {
   "name": "giffer-limit",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Limit downloaded GIFs to a specific number of images",
   "main": "index.js",
   "scripts": {
